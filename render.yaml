@@ -5,8 +5,8 @@ services:
     plan: free
     region: oregon
     branch: main
-    buildCommand: "cd backend && npm install"
-    startCommand: "cd backend && npm start"
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
     rootDir: backend
     envVars:
       - key: NODE_ENV
