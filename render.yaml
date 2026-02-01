@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: flying-panda-backend
+    env: node
+    plan: free
+    region: oregon
+    branch: main
+    buildCommand: "cd backend && npm install"
+    startCommand: "cd backend && npm start"
+    rootDir: backend
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+# Notes:
+# - When you connect this repo in Render, this file will define a web service
+#   that runs the backend in the `backend` folder. Adjust `branch`/`region`
+#   or `plan` as needed.

@@ -1,0 +1,13 @@
+[build]
+  base = "frontend/client"
+  command = "npm ci && npm run build"
+  publish = "frontend/client/dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# This file tells Netlify how to build and publish the Vite app located in
+# `frontend/client`. When connecting the repo in Netlify, set the build
+# settings to use this `netlify.toml` (Netlify detects it automatically).
