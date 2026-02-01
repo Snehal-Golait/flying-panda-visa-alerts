@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 
-const API_URL = "http://localhost:5000/alerts";
+const API_URL = `${import.meta.env.VITE_API_BASE || "http://localhost:5000"}/alerts`;
 
 const AlertsList = ({ alerts, refresh, totalCount }) => {
   const [showModal, setShowModal] = useState(false);

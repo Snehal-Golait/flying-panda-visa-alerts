@@ -1,7 +1,7 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 
-const API_URL = "http://localhost:5000/alerts";
+const API_URL = `${import.meta.env.VITE_API_BASE || "http://localhost:5000"}/alerts`;
 
 export default function AlertForm({ refresh }) {
   const [country, setCountry] = useState("");

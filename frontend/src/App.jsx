@@ -3,7 +3,7 @@ import { Toaster } from "react-hot-toast";
 import AlertForm from "./components/AlertForm";
 import AlertsList from "./components/AlertsList";
 
-const API_URL = "http://localhost:5000/alerts";
+const API_URL = `${import.meta.env.VITE_API_BASE || "http://localhost:5000"}/alerts`;
 
 export default function App() {
   const [alerts, setAlerts] = useState([]);
