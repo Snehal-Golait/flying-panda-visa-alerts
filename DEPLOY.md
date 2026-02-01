@@ -38,3 +38,19 @@ Notes
 - The backend now reads `PORT` from the environment (see `backend/server.js`).
 - `backend/package.json` added to let Render install and start the server.
 - Adjust `render.yaml` and `netlify.toml` if you use a different branch or region.
+
+Set `VITE_API_BASE` on Netlify
+
+- In the Netlify UI: Site settings → Build & deploy → Environment → Add variable
+  - Key: `VITE_API_BASE`
+  - Value: `https://your-backend-service.onrender.com` (replace with your Render URL)
+
+- Alternatively, using Netlify CLI:
+
+```bash
+# login first: netlify login
+# set env var for a site by site id or site name
+netlify env:set VITE_API_BASE https://your-backend-service.onrender.com --site <your-site-id>
+```
+
+- Note: Netlify's UI-provided environment variables are used during the build. Using `.env.production` is useful for local production builds, but Netlify overrides env vars with values set in the site settings.
